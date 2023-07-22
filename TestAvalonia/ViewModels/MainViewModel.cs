@@ -1,7 +1,10 @@
-﻿namespace TestAvalonia.ViewModels
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+
+namespace TestAvalonia.ViewModels
 {
-    public class MainViewModel : ViewModelBase
+    public partial class MainViewModel : ViewModelBase
     {
-        public string Greeting => "Welcome to Avalonia!";
+        [ObservableProperty]
+        private string greeting = "Avalonia";
     }
 }

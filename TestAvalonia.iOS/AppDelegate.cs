@@ -1,10 +1,6 @@
 using Avalonia;
-using Avalonia.Controls;
 using Avalonia.iOS;
-using Avalonia.Media;
-using Avalonia.ReactiveUI;
 using Foundation;
-using UIKit;
 
 namespace TestAvalonia.iOS
 {
@@ -14,9 +10,5 @@ namespace TestAvalonia.iOS
     [Register("AppDelegate")]
     public partial class AppDelegate : AvaloniaAppDelegate<App>
     {
-        protected override AppBuilder CustomizeAppBuilder(AppBuilder builder)
-        {
-            return builder.UseReactiveUI();
-        }
     }
 }
