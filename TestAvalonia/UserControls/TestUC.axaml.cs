@@ -1,7 +1,6 @@
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Data;
-using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace TestAvalonia.UserControls
 {
@@ -9,17 +8,13 @@ namespace TestAvalonia.UserControls
     {
         public static readonly DirectProperty<TestUC, string> ValueProperty =
            AvaloniaProperty.RegisterDirect<TestUC, string>(
-               nameof(Value),                               // The name of the property     
-               o => o.Value,                                // The getter of the property
-               (o, v) => o.Value = v,                       // The setter of the property
-               defaultBindingMode: BindingMode.TwoWay);     // Enables DataValidation
+               nameof(Value),
+               o => o.Value,
+               (o, v) => o.Value = v,
+               defaultBindingMode: BindingMode.TwoWay);
 
-        // For direct properties we need to have a backing field
         private string _value;
 
-        /// <summary>
-        /// Gets or sets the current value
-        /// </summary>
         public string Value
         {
             get { return _value; }
