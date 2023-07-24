@@ -1,0 +1,21 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="using:TestAvalonia.Controls">
+  <Design.PreviewWith>
+    <controls:MyControl />
+  </Design.PreviewWith>
+
+  <Style Selector="controls|MyControl">
+    <!-- Set Defaults -->
+    <Setter Property="Template">
+      <ControlTemplate>
+        <StackPanel>
+          <Label Content="one way binding"/>
+          <TextBox Text="{TemplateBinding Value}"/>
+          <Label Content="Two way binndign"/>
+          <TextBox Text="{Binding Value,Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"/>
+        </StackPanel>
+      </ControlTemplate>
+    </Setter>
+  </Style>
+</Styles>
