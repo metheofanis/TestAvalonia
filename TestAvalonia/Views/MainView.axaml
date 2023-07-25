@@ -1,28 +1,31 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"			 
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:controls ="using:TestAvalonia.Controls"
              xmlns:viewModels="clr-namespace:TestAvalonia.ViewModels"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="TestAvalonia.Views.MainView"
 			 xmlns:uc="using:TestAvalonia.UserControls"
              Foreground="White"
              Background="#171C2C">
-	<Design.DataContext>
-		<!-- This only sets the DataContext for the previewer in an IDE,
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
          to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-		<viewModels:MainViewModel />
-	</Design.DataContext>
-	
-	<StackPanel>
-			<Label Content="First in MainView"/>
-			<TextBox Text="{Binding Greeting}" HorizontalAlignment="Stretch"/>
+    <viewModels:MainViewModel />
+  </Design.DataContext>
 
-			<Label Content="Second in MainView"/>
-			<TextBox Text="{Binding Greeting}" HorizontalAlignment="Stretch"/>
+  <StackPanel>
+    <Label Content="First in MainView"/>
+    <TextBox Text="{Binding Greeting}" HorizontalAlignment="Stretch"/>
 
-			<Label Content="UserControl"/>			
-			<uc:TestUC Value="{Binding Greeting}"/>		
-	</StackPanel>
-	
+    <Label Content="Second in MainView"/>
+    <TextBox Text="{Binding Greeting}" HorizontalAlignment="Stretch"/>
+
+    <Label Content="UserControl"/>
+    <uc:TestUC Value="{Binding Greeting}"/>
+    <Label Content="controls"/>
+    <controls:MyControl Value="{Binding Greeting}"/>
+  </StackPanel>
+
 </UserControl>
